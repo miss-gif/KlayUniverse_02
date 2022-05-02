@@ -1,0 +1,49 @@
+// 디바이스 사이즈
+$desktop: 1400px;
+$laptop: 1020px;
+$tablet: 768px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (max-width: #{$laptop}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+// 중앙 정렬
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// text 호버 효과
+@mixin text_hover {
+  cursor: pointer;
+  color: var(--pointText);
+}
+
+html {
+  @include desktop {
+    font-size: 16px;
+  }
+  @include laptop {
+    font-size: 14px;
+    background-color: #156;
+  }
+  @include tablet {
+    font-size: 12px;
+    background-color: #147;
+  }
+}
+
+////////////////////////////////////////////////////////////////////

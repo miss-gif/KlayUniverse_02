@@ -1,1 +1,20 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+@media (min-width: 1400px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1020px) {
+  html {
+    font-size: 14px;
+    background-color: #156;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 12px;
+    background-color: #147;
+  }
+}
+/*# sourceMappingURL=style.css.map */
