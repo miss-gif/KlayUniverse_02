@@ -1,20 +1,29 @@
 // 디바이스 사이즈
 $desktop: 1400px;
-$laptop: 1020px;
+$laptop: 1024px;
 $tablet: 768px;
+$mobile: 480px;
 
 @mixin desktop {
   @media (min-width: #{$desktop}) {
     @content;
   }
 }
+
 @mixin laptop {
   @media (max-width: #{$laptop}) {
     @content;
   }
 }
+
 @mixin tablet {
   @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
     @content;
   }
 }
@@ -32,18 +41,67 @@ $tablet: 768px;
   color: var(--pointText);
 }
 
+// desktop, max-width
+@mixin max-width {
+  max-width: $desktop;
+}
+
 html {
   @include desktop {
     font-size: 16px;
   }
+
   @include laptop {
     font-size: 14px;
     background-color: #156;
   }
+
   @include tablet {
     font-size: 12px;
     background-color: #147;
   }
+
+  @include mobile() {
+    font-size: 12px;
+    background-color: #111;
+  }
 }
 
 ////////////////////////////////////////////////////////////////////
+
+// header 영역
+header {
+  @include max-width();
+  position: fixed;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+  @include center();
+  > .inner {
+    @include center();
+    > h1 {
+    }
+    > nav {
+      > ul {
+        background-color: #156;
+        width: 800px;
+        justify-content: space-evenly;
+
+        display: flex;
+        > li {
+          &:last-child {
+          }
+          > a {
+            &:hover {
+              @include text_hover();
+            }
+          }
+        }
+      }
+    }
+    // nav 클릭 후, 추가되는 클래스의 색상
+    .onClick {
+      @include text_hover();
+    }
+  }
+}

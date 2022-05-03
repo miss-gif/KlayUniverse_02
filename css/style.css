@@ -4,7 +4,7 @@
   }
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1024px) {
   html {
     font-size: 14px;
     background-color: #156;
@@ -16,5 +16,62 @@
     font-size: 12px;
     background-color: #147;
   }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+    background-color: #111;
+  }
+}
+
+header {
+  max-width: 1400px;
+  position: fixed;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header > .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header > .inner > nav > ul {
+  background-color: #156;
+  width: 800px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header > .inner > nav > ul > li > a:hover {
+  cursor: pointer;
+  color: var(--pointText);
+}
+
+header > .inner .onClick {
+  cursor: pointer;
+  color: var(--pointText);
 }
 /*# sourceMappingURL=style.css.map */
