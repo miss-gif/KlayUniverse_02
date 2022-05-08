@@ -71,13 +71,13 @@ html {
 
 // header 영역
 header {
-  @include max-width();
   position: fixed;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 99;
   @include center();
   > .inner {
+    @include max-width();
     @include center();
     > h1 {
     }
@@ -102,6 +102,11 @@ header {
     // nav 클릭 후, 추가되는 클래스의 색상
     .onClick {
       @include text_hover();
+    }
+  }
+  @include laptop() {
+    .inner {
+      width: 100%;
     }
   }
 }

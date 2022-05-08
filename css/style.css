@@ -26,7 +26,6 @@
 }
 
 header {
-  max-width: 1400px;
   position: fixed;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -43,6 +42,7 @@ header {
 }
 
 header > .inner {
+  max-width: 1400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,5 +73,11 @@ header > .inner > nav > ul > li > a:hover {
 header > .inner .onClick {
   cursor: pointer;
   color: var(--pointText);
+}
+
+@media (max-width: 1024px) {
+  header .inner {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
